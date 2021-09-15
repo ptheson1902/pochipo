@@ -14,18 +14,23 @@ body {
   background-position: top; }
 
 .main {
-  padding: 12% 0 0 12%;
+  padding-top: 10%;
+  width: 100%;
   position: absolute;
-  text-align: center;
-  display: flex;
-  justify-content: center; }
+  text-align: center; }
   .main .title {
+    width: 50%;
     font-size: 5rem;
     position: absolute;
-    margin: 5% 35% 0 0;
-    color: red; }
+    margin: 10%;
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; }
+    .main .title h1 {
+      font-size: 2.5rem; }
     .main .title p {
-      margin-top: 5%; }
+      margin-top: 10%; }
   .main #map .mapItem {
     cursor: pointer; }
     .main #map .mapItem:hover {
@@ -164,3 +169,17 @@ body {
       border-radius: 15%; }
       .album-container .list .item img {
         max-width: 150px; }
+
+@media screen and (min-width: 850px) {
+  body {
+    background-repeat: repeat-y;
+    width: 100%;
+    box-sizing: border-box; }
+    body .main {
+      padding: 5% 30%;
+      justify-content: space-around; }
+      body .main .title {
+        width: auto;
+        margin: 5%; }
+    body .footer {
+      padding: 0 30%; } }

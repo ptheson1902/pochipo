@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quick Quiz - Play</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/jpg" href="imgs/logo.svg" />
     <script
       src="https://code.jquery.com/jquery-3.6.0.js"
       integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -33,7 +34,7 @@
             data-name="Icon awesome-gift"
             d="M3.125,48.679A3.367,3.367,0,0,0,6.25,52.25H21.875V34.393H3.125Zm25,3.571H43.75a3.367,3.367,0,0,0,3.125-3.571V34.393H28.125Zm18.75-35.714H42.764a10.853,10.853,0,0,0,.986-4.464c0-5.413-3.857-9.821-8.594-9.821-4.062,0-6.689,2.377-10.059,7.623-3.369-5.246-6-7.623-10.059-7.623-4.736,0-8.594,4.408-8.594,9.821a10.7,10.7,0,0,0,.986,4.464H3.125A3.367,3.367,0,0,0,0,20.107v8.929a1.69,1.69,0,0,0,1.563,1.786H48.438A1.69,1.69,0,0,0,50,29.036V20.107A3.367,3.367,0,0,0,46.875,16.536Zm-31.846,0a4.212,4.212,0,0,1-3.906-4.464,4.212,4.212,0,0,1,3.906-4.464c1.943,0,3.379.368,8.408,8.929H15.029Zm20.127,0H26.748C31.768,8,33.164,7.607,35.156,7.607a4.212,4.212,0,0,1,3.906,4.464A4.212,4.212,0,0,1,35.156,16.536Z"
             transform="translate(0 -2.25)"
-            fill="#fff"
+            fill="#EF476F"
           />
         </svg>
       </a>
@@ -74,8 +75,10 @@
     </div>
 
     <script>
-      const list = JSON.parse(localStorage.getItem("list"));
-      console.log(list);
+      const list = localStorage.getItem('list')? JSON.parse(localStorage.getItem("list")): [];
+      if(list.length === 0){
+        $(".album-container").append('<h2 style="color:red">ギフトがなし</h2>')
+      }
       $(document).ready(function () {
         let i = 0;
         for (i; i < list.length; i++) {
